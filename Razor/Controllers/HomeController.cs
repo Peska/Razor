@@ -27,5 +27,28 @@ namespace Razor.Controllers
 		{
 			return View(product);
 		}
+
+		public ActionResult DemoExpression()
+		{
+			ViewBag.ProductCount = 1;
+			ViewBag.ExpressShip = true;
+			ViewBag.ApplyDiscount = false;
+			ViewBag.Supplier = null;
+
+			return View(product);
+		}
+
+		public ActionResult DemoArray()
+		{
+			Product[] products =
+			{
+				new Product { Name ="Kayak1", Price = 275M},
+				new Product { Name ="Kayak2", Price = 276M},
+				new Product { Name ="Kayak3", Price = 277M},
+				new Product { Name ="Kayak4", Price = 278M}
+			};
+
+			return View(products);
+		}
 	}
 }
